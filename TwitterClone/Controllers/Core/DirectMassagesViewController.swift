@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DirectMassagesViewController.swift
 //  TwitterClone
 //
 //  Created by Dmitryi Velko on 06.12.2022.
@@ -7,13 +7,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class DirectMassagesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        
+        
     }
-
+    
 
 }
-
