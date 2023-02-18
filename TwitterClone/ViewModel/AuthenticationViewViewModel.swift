@@ -28,7 +28,6 @@ final class AuthenticationViewViewModel: ObservableObject {
         isAuthenticationFormValid = isValidEmail(email) && password.count >= 8
     }
     
-    // регулярное выражение для проверки электронной почты ios swift скопированное со стакОверФлоу. Просто проверяет допустимость символов.
     func isValidEmail(_ email: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         
