@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA08E32229A7595D00A69FA2 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA08E32129A7595D00A69FA2 /* StorageManager.swift */; };
 		EA2B52DF294C4A1400A0B616 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA2B52DE294C4A1300A0B616 /* GoogleService-Info.plist */; };
 		EA2B52E2294C4C0800A0B616 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EA2B52E1294C4C0800A0B616 /* FirebaseAuth */; };
 		EA2B52E4294C4C0800A0B616 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = EA2B52E3294C4C0800A0B616 /* FirebaseAuthCombine-Community */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EA08E32129A7595D00A69FA2 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		EA2B52DE294C4A1300A0B616 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EA2B52F4294C4EFA00A0B616 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		EA2B52F6294C982700A0B616 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			children = (
 				EAEC3F342950495F00723AAB /* AuthManager.swift */,
 				EAEFF1C72951A71500E262E8 /* DatabaseManager.swift */,
+				EA08E32129A7595D00A69FA2 /* StorageManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				EAE58534293F2DD6000D5FD0 /* SearchViewController.swift in Sources */,
 				EAEC3F352950495F00723AAB /* AuthManager.swift in Sources */,
 				EAE584FD293F29A4000D5FD0 /* MainTabBarViewController.swift in Sources */,
+				EA08E32229A7595D00A69FA2 /* StorageManager.swift in Sources */,
 				EAEFF1C32950906100E262E8 /* LoginViewController.swift in Sources */,
 				EAEFF1C82951A71500E262E8 /* DatabaseManager.swift in Sources */,
 				EAE584F9293F29A4000D5FD0 /* AppDelegate.swift in Sources */,

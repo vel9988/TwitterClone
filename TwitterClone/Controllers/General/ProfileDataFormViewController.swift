@@ -115,14 +115,20 @@ class ProfileDataFormViewController: UIViewController {
         displayNameTextField.delegate = self
         userNameTextField.delegate = self
         bioTextView.delegate = self
-        
+                
         view.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(didTapToDismiss)))
         avatarPlaceholderImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapToUpload)))
         
         bindViews()
         
+        submitButton.addTarget(self, action: #selector(didTapSubmit), for: .touchUpInside)
+        
         configureConstraints()
         
+    }
+    
+    @objc private func didTapSubmit() {
+        viewModel.uploadAvatar()
     }
     
     @objc private func didUpdateDisplayName() {
@@ -237,6 +243,7 @@ extension ProfileDataFormViewController: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
         viewModel.bio = textView.text
+        viewModel.validateUserProfileForm()
     }
 }
 
