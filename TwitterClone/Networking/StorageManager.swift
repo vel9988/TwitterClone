@@ -27,7 +27,6 @@ final class StorageManager {
         return storage
             .reference(withPath: id)
             .downloadURL()
-            .print()
             .eraseToAnyPublisher()
     }
     
@@ -36,7 +35,6 @@ final class StorageManager {
             .reference()
             .child("images/\(randomID).jpg")
             .putData(image, metadata: metaData)
-            .print()
             .eraseToAnyPublisher()
     }
     
