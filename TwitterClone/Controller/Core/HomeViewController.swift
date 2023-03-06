@@ -129,6 +129,14 @@ class HomeViewController: UIViewController {
                 }
             }
             .store(in: &subscriptions)
+        
+        viewModel.$tweets
+            .sink { [weak self] _ in
+                DispatchQueue.main.async {
+                    self?.timelineTableView.reloadData()
+                }
+            }
+            .store(in: &subscriptions)
     }
     
     private func configureConstraints() {
@@ -152,7 +160,7 @@ extension HomeViewController: UITableViewDelegate {
 // MARK: - UITableViewDataSource
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        viewModel.tweets.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -160,7 +168,11 @@ extension HomeViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? TweetTableViewCell else {
             return UITableViewCell()
         }
-        
+        let tweetModel = viewModel.tweets[indexPath.row]
+        cell.configureTweetWith(displayName: tweetModel.author.displayName,
+                                userName: tweetModel.author.userName,
+                                tweetTextContent: tweetModel.tweetContent,
+                                avatarPath: tweetModel.author.avatarPath)
         cell.delegate = self
         
         return cell

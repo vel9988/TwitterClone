@@ -29,14 +29,12 @@ class TweetTableViewCell: UITableViewCell {
         avatar.layer.cornerRadius = 25
         avatar.layer.masksToBounds = true
         avatar.clipsToBounds = true
-        avatar.image = UIImage(systemName: "person")
         avatar.backgroundColor = .systemMint
         return avatar
     }()
     
     private let displayNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Tyler Durden"
         label.font = .systemFont(ofSize: 18, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -44,7 +42,6 @@ class TweetTableViewCell: UITableViewCell {
     
     private let userNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Fight Club"
         label.font = .systemFont(ofSize: 16, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .secondaryLabel
@@ -54,7 +51,6 @@ class TweetTableViewCell: UITableViewCell {
     private let tweetTextContentLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Реализация источника данных может справиться с этой обязанностью любым способом, подходящим для вашего приложения. Во многих случаях он должен смотреть на переданный ему контроллер представления, определять, какой контент отображать, и создавать контроллеры представления по мере необходимости."
         label.numberOfLines = 0
         return label
     }()
@@ -128,6 +124,13 @@ class TweetTableViewCell: UITableViewCell {
         retweetButton.addTarget(self, action: #selector(didTapRetweet), for: .touchUpInside)
         likeButton.addTarget(self, action: #selector(didTapLike), for: .touchUpInside)
         shareButton.addTarget(self, action: #selector(didTapShare), for: .touchUpInside)
+    }
+    
+    func configureTweetWith(displayName: String, userName: String, tweetTextContent: String, avatarPath: String) {
+        displayNameLabel.text = displayName
+        userNameLabel.text = "@\(userName)"
+        tweetTextContentLabel.text = tweetTextContent
+        avatarImageView.sd_setImage(with: URL(string: avatarPath))
     }
     
     private func configureConstraints() {
