@@ -1,7 +1,7 @@
 # TwitterClone
 
 **APP**: Twitter clone in UIKit with MVVM, 
-Firebase for Login/Register and other database.
+Firebase for Login/Register.
 
 **Tech Stack**: UIKit, URLSession, Combine, Firebase, SDWebImage, PhotosUI, SwiftPackageManager
 
